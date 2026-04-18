@@ -23,9 +23,8 @@
 
 使用方式：
 ```bash
-cd 算命.skill
-python3 -m venv .venv && .venv/bin/pip install lunar-python
-.venv/bin/python3 tools/bazi_pan.py --json <阳历日期> <时辰> <性别>
+# 零依赖，lunar-python 已打包在 tools/ 内
+python3 tools/bazi_pan.py --json <阳历日期> <时辰> <性别>
 ```
 
 JSON 输出：四柱、十神、藏干、五行、纳音、大运（方向/起运年龄/10步大运）、

@@ -70,14 +70,11 @@ cat 算命.skill/GEMINI.md | gemini "..."
 
 ## ⚙️ 工具依赖
 
-```bash
-# Python 环境（推荐 3.10+，已含 venv）
-cd 算命.skill
-python3 -m venv .venv
-.venv/bin/pip install lunar-python
+**零依赖！** `lunar-python` 已打包在 `tools/lunar_python/` 目录内，直接运行即可：
 
-# 排盘命令
-.venv/bin/python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
+```bash
+# 排盘命令（任意 Python 3.8+ 环境，无需安装任何包）
+python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
 ```
 
 ---

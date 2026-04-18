@@ -25,11 +25,9 @@
 工具路径：TOOLS/bazi_pan.py
 
 ```bash
-cd 算命.skill
-python3 -m venv .venv
-.venv/bin/pip install lunar-python
-.venv/bin/python3 tools/bazi_pan.py --json <阳历日期> <时辰> <性别>
-# 例：.venv/bin/python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
+# 零依赖，lunar-python 已打包在 tools/ 内
+python3 tools/bazi_pan.py --json <阳历日期> <时辰> <性别>
+# 例：python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
 ```
 
 JSON 输出包含：四柱、十神、藏干、五行、纳音、大运方向、起运年龄、完整10步大运、近5年流年、日主强弱。

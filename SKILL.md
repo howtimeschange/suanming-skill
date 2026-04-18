@@ -30,14 +30,14 @@
 ## Python 排盘工具
 
 **工具路径**：`tools/bazi_pan.py`
-**Python 环境**：`.venv/bin/python3`（在 skill 目录下执行）
+**Python 环境**：任意 Python 3.8+（`lunar-python` 已打包在 tools 内，零依赖）
 
 ### 基本命令
 
 ```bash
 cd ~/.openclaw/workspace/算命.skill
-.venv/bin/python3 tools/bazi_pan.py --json <阳历日期> <时辰> <性别>
-# 例：.venv/bin/python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
+python3 tools/bazi_pan.py --json <阳历日期> <时辰> <性别>
+# 例：python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
 ```
 
 ### JSON 输出字段

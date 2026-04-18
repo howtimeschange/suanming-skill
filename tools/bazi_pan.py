@@ -1,20 +1,29 @@
 #!/usr/bin/env python3
 """
-八字排盘 CLI 工具（完整版）
+八字排盘 CLI 工具（完整版，含内嵌 lunar-python 库）
 包含：四柱排盘 + 大运排列 + 起运年龄 + 流年
 
 用法:
-  python3 bazi_pan.py <阳历日期> <时辰> [性别]
-  python3 bazi_pan.py --json <阳历日期> <时辰> [性别]
+  python3 tools/bazi_pan.py <阳历日期> <时辰> [性别]
+  python3 tools/bazi_pan.py --json <阳历日期> <时辰> [性别]
 
 示例:
-  python3 bazi_pan.py 1990-5-15 8:00 male
-  python3 bazi_pan.py --json 1990-5-15 8:00 female
+  python3 tools/bazi_pan.py 1990-5-15 8:00 male
+  python3 tools/bazi_pan.py --json 1990-5-15 8:00 female
 """
 
 import sys
+import os
 import json
-import lunar_python as lunar
+
+# 优先使用同目录下的 lunar_python（已打包在 tools/ 内）
+# 若无则回退到系统安装版本
+_TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
+if os.path.exists(os.path.join(_TOOLS_DIR, "lunar_python")):
+    sys.path.insert(0, _TOOLS_DIR)
+    import lunar_python as lunar
+else:
+    import lunar_python as lunar
 from datetime import datetime, date
 
 # ============================================================

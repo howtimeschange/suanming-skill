@@ -28,13 +28,10 @@
 路径：`TOOLS/bazi_pan.py`
 依赖：`lunar-python`
 
-安装并执行：
+零依赖，直接执行：
 ```bash
-cd 算命.skill
-python3 -m venv .venv
-.venv/bin/pip install lunar-python
-.venv/bin/python3 tools/bazi_pan.py --json <阳历日期> <时辰> <性别>
-# 例：.venv/bin/python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
+python3 tools/bazi_pan.py --json <阳历日期> <时辰> <性别>
+# 例：python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
 ```
 
 JSON 输出字段：
