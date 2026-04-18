@@ -1,11 +1,13 @@
-# suanming-skill-plus
+# 算命.skill
 
-> 四柱八字命理跨平台 skill 的**完善版**，修复自 [howtimeschange/suanming-skill](https://github.com/howtimeschange/suanming-skill)。
+> 四柱八字命理跨平台 skill。交互式收集生辰，调用 Python 排盘工具输出结构化 JSON，再由模型按《穷通宝典》《滴天髓》《渊海子平》《子平真诠》等经典做专业分析。
 > 适配 OpenClaw / Claude Code / OpenAI Codex / Google Gemini，**零依赖**直接运行。
+
+支持阳历/农历（含闰月）、真太阳时校正、夜子时进位、中文时辰与模糊时段（早上/中午/晚上）、日主三维强弱判定、十步大运、避立春陷阱的流年。
 
 ---
 
-## 与上游的差异（修复 14 项）
+## 本次更新（v1.1.0）修复 14 项
 
 | # | 问题 | 修复 |
 |---|------|------|
@@ -29,7 +31,7 @@
 ## 目录结构
 
 ```
-suanming-skill-plus/
+算命.skill/
 ├── SKILL.md                 # ★ 唯一权威源（含 YAML frontmatter）
 ├── CLAUDE.md / CODEX.md / GEMINI.md / OPENCLAW.md   # 四平台薄入口
 ├── README.md  LICENSE
@@ -61,8 +63,8 @@ suanming-skill-plus/
 ## 快速开始
 
 ```bash
-git clone <this-repo> suanming-skill-plus
-cd suanming-skill-plus
+git clone https://github.com/howtimeschange/suanming-skill.git
+cd suanming-skill
 
 # 阳历
 python3 tools/bazi_pan.py 1990-5-15 8:00 男
@@ -108,7 +110,7 @@ python3 tests/test_bazi.py
 ### Claude Code
 
 ```bash
-cp -r suanming-skill-plus ~/.claude/skills/suanming
+cp -r suanming-skill ~/.claude/skills/suanming
 ```
 
 重启 Claude Code，输入 `/suanming` 或"算命 / 看八字 / 批八字"即触发。
@@ -116,7 +118,7 @@ cp -r suanming-skill-plus ~/.claude/skills/suanming
 ### OpenClaw
 
 ```bash
-cp -r suanming-skill-plus ~/.openclaw/workspace/skills/suanming
+cp -r suanming-skill ~/.openclaw/workspace/skills/suanming
 ```
 
 触发词：算命 / 八字 / 看八字 / 批八字 / 排八字 / 四柱 / 命盘 / 算一卦 / 看运势 / 命运分析。
@@ -145,8 +147,7 @@ codex --system-file ./SKILL.md
 
 ## 致谢
 
-- 上游：[howtimeschange/suanming-skill](https://github.com/howtimeschange/suanming-skill)
-- 排盘内核：[6tail/lunar-python](https://github.com/6tail/lunar-python)（Apache-2.0）
+- 排盘内核：[6tail/lunar-python](https://github.com/6tail/lunar-python)（Apache-2.0，已内嵌）
 
 ---
 
