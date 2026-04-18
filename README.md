@@ -10,7 +10,7 @@
 算命.skill/
 ├── README.md              # 本文件
 ├── SKILL.md               # 【OpenClaw】技能定义（触发词 + 完整流程）
-├── CLAUDE.md              # 【Claude Code】系统提示词
+├── CLAUDE.md              # 【Claude Code】自定义命令（/suanming）
 ├── CODEX.md               # 【OpenAI Codex】指令模板
 ├── GEMINI.md              # 【Google Gemini】提示词模板
 ├── REFERENCES/            # 共享知识库
@@ -25,10 +25,10 @@
 
 ---
 
-## ⚙️ 快速开始
+## ⚙️ 快速开始（排盘验证）
 
 ```bash
-# 克隆后直接运行，无需安装任何依赖
+# 克隆后无需安装任何依赖，直接运行
 python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
 ```
 
@@ -36,38 +36,44 @@ python3 tools/bazi_pan.py --json 1990-5-15 8:00 male
 
 ---
 
-## 🚀 各平台使用方式
+## 🚀 各平台安装方式
 
 ### OpenClaw
 
-将本目录复制到 OpenClaw 的 skills 目录即可自动加载：
-
 ```bash
+# 复制到 skills 目录，触发词自动生效
 cp -r 算命.skill ~/.openclaw/workspace/skills/
 ```
 
-加载后，说出触发词（如"算命"、"看八字"），OpenClaw 会自动调用此技能。
+说出触发词（"算命"、"看八字"等）即可自动调用。
+
+---
 
 ### Claude Code
 
-在项目目录创建命令文件，将 `CLAUDE.md` 内容复制进去：
-
+**方式一：复制到 skills 目录（推荐）**
 ```bash
-mkdir -p .claude/commands/
-cp 算命.skill/CLAUDE.md .claude/commands/suanming.md
+cp -r 算命.skill ~/.claude/skills/suanming
 ```
 
-运行 `/suanming` 即可开始八字分析。
+然后在 Claude Code 中输入 `/suanming` 即可开始分析。
+
+---
 
 ### OpenAI Codex
 
 ```bash
+# 直接用 --system-file 指定提示词文件
 codex --system-file ./算命.skill/CODEX.md
 ```
 
+每次启动时指定即可，无需额外安装。
+
+---
+
 ### Google Gemini
 
-在 Google AI Studio 或 Gemini CLI 中，将 `GEMINI.md` 内容作为 System Instructions 加载即可。
+在 Google AI Studio 或 Gemini CLI 中，将 `GEMINI.md` 的全部内容复制到 **System Instructions** 框中，加载后每次对话自动生效。
 
 ---
 
