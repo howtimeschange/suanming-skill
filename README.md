@@ -1,5 +1,7 @@
 # 算命.skill
 
+**[访问抓虾 Harness 官网 · 查看介绍与下载](https://harness.crawshrimp.com/)**
+
 > 四柱八字命理跨平台 skill。交互式收集生辰，调用 Python 排盘工具输出结构化 JSON，再由模型按《穷通宝典》《滴天髓》《渊海子平》《子平真诠》等经典做专业分析。
 > 适配 OpenClaw / Claude Code / OpenAI Codex / Google Gemini，**零依赖**直接运行。
 
@@ -11,7 +13,7 @@
 
 欢迎联系作者，交流「算命.skill」的使用与想法、探讨项目合作，或赞助支持项目持续开发。
 
-使用微信扫描下方二维码添加好友，备注「算命.skill + 合作 / 交流 / 赞助」即可。此二维码与[抓虾官网](https://crawshrimp.com/)使用的联系方式一致。
+使用微信扫描下方二维码添加好友，备注「算命.skill + 合作 / 交流 / 赞助」即可。
 
 <a href="https://crawshrimp.com/wechat-qr.jpg">
   <img src="https://crawshrimp.com/wechat-qr.jpg" alt="作者的微信联系二维码，用于算命.skill合作交流与赞助联系" width="280" />
